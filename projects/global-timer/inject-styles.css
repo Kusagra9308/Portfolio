@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@400;600&display=swap");
+
+:root {
+  --timer-bg: rgba(28, 28, 30, 0.7);
+  --timer-accent: #00e5ff;
+  --timer-text: #ffffff;
+  --timer-btn-bg: rgba(255, 255, 255, 0.1);
+  --timer-btn-hover: rgba(255, 255, 255, 0.2);
+}
+
+#ag-timer-root {
+  width: 100%;
+  background: #2c2c2e;
+  z-index: 9999;
+  position: sticky;
+  top: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Prevent site CSS from breaking your layout */
+#ag-timer-root * {
+  box-sizing: border-box;
+}
+
+.ag-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px;
+}
+
+.ag-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ag-hidden {
+  display: none !important;
+}
+
+#ag-timer-root.ag-hidden {
+  display: none !important;
+}
+
+.ag-timer-display {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  min-width: 100px;
+  text-align: center;
+  color: var(--timer-accent);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 2px 4px;
+  transition: background 0.2s;
+}
+
+.ag-timer-display:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ag-timer-display:focus {
+  outline: 1px solid var(--timer-accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.ag-timer-btn {
+  background: var(--timer-btn-bg);
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ag-timer-btn:hover {
+  background: var(--timer-btn-hover);
+  transform: scale(1.05);
+}
+
+.ag-timer-btn-adjust {
+  background: rgba(0, 229, 255, 0.1);
+  border: none;
+  color: var(--timer-accent);
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ag-timer-btn-adjust:hover {
+  background: rgba(0, 229, 255, 0.2);
+}
+
+/* Mode-specific visibility */
+#ag-timer-root:not(.mode-timer):not(.mode-pomodoro) .ag-plus-btn,
+#ag-timer-root:not(.mode-timer):not(.mode-pomodoro) .ag-minus-btn {
+  display: none;
+}
+
+#ag-timer-root:not(.mode-pomodoro) .ag-pomo-btn-group {
+  display: none;
+}
+
+.ag-timer-mode-switcher {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.ag-timer-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.ag-timer-session-info {
+  font-size: 0.65rem;
+  color: var(--timer-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ag-pomo-work {
+  background: #ff453a !important;
+  color: white !important;
+  font-weight: 700;
+}
+
+.ag-pomo-break {
+  background: #34c759 !important;
+  color: white !important;
+  font-weight: 700;
+}
+
+#ag-timer-root:not(.mode-timer):not(.mode-pomodoro) .ag-quick-pick {
+  display: none;
+}
+
+.ag-quick-pick {
+  display: flex;
+  gap: 4px;
+}
+
+@media (max-width: 600px) {
+  .ag-container {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 6px;
+  }
+}

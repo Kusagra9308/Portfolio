@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 180px;
+      padding: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1c1c1e;
+      color: white;
+      text-align: center;
+    }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    #toggle-visibility {
+      background: #00e5ff;
+      color: #000;
+    }
+    #control-timer {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .status {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="status">VISIBILITY</div>
+  <button id="toggle-visibility" class="btn">HIDE TIMER</button>
+  
+  <div class="status">POMODORO</div>
+  <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:6px;">
+    <button id="pomo-25" class="btn" style="background:#ff453a; font-size: 0.7rem; padding: 8px 0;">WORK</button>
+    <button id="pomo-5" class="btn" style="background:#34c759; font-size: 0.7rem; padding: 8px 0;">BREAK</button>
+    <button id="pomo-15" class="btn" style="background:#007aff; font-size: 0.7rem; padding: 8px 0;">LONG</button>
+  </div>
+  
+  <div style="height: 8px;"></div>
+  
+  <div class="status">CUSTOM TIMER</div>
+  <div style="display:flex; gap:6px; margin-bottom: 8px;">
+    <input type="number" id="custom-minutes" placeholder="Min" style="width: 60px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 4px; padding: 4px; text-align: center;">
+    <button id="set-custom-timer" class="btn" style="margin:0; padding: 6px; font-size: 0.75rem; background: #00e5ff; color: black;">SET</button>
+  </div>
+  
+  <div class="status">GLOBAL CONTROLS</div>
+  <button id="control-timer" class="btn">START / PAUSE</button>
+  <button id="reset-timer" class="btn" style="background:transparent; color:#ff453a; margin-top: 0;">RESET ALL</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>

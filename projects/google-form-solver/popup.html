@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    :root {
+      --primary: #4285f4;
+      --secondary: #34a853;
+      --bg: #121212;
+      --text: #ffffff;
+      --card-bg: #1e1e1e;
+    }
+    body {
+      width: 320px;
+      padding: 20px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #333;
+      background: #252525;
+      color: white;
+      border-radius: 8px;
+      box-sizing: border-box;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .status {
+      margin-top: 10px;
+      font-size: 0.75rem;
+      text-align: center;
+      min-height: 18px;
+    }
+    .free-link {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      color: #4285f4;
+      text-decoration: none;
+      font-size: 0.75rem;
+    }
+    .shortcuts {
+      margin-top: 20px;
+      font-size: 0.7rem;
+      color: #888;
+      border-top: 1px solid #333;
+      padding-top: 15px;
+    }
+    .shortcut-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    .key {
+      background: #333;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <h2>Gemini Quiz Solver (Free)</h2>
+  <div class="input-group">
+    <label for="apiKey">Google Gemini API Key</label>
+    <input type="password" id="apiKey" placeholder="Paste your key here...">
+  </div>
+  <button id="saveBtn">Save & Start</button>
+  <a href="https://aistudio.google.com/app/apikey" target="_blank" class="free-link">Get a FREE API Key here</a>
+  <div class="status" id="statusText"></div>
+
+  <div class="shortcuts">
+    <div class="shortcut-item">
+      <span>Fetch & Show</span>
+      <span class="key">Alt+Shift+S</span>
+    </div>
+    <div class="shortcut-item">
+      <span>Toggle Dots</span>
+      <span class="key">Alt+Shift+H</span>
+    </div>
+    <div class="shortcut-item">
+      <span>Refetch</span>
+      <span class="key">Alt+Shift+L</span>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

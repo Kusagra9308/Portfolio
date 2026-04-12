@@ -164,6 +164,18 @@ nav.scrolled {
   align-items: center;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mobile-toggle {
+  display: none;
+  color: var(--text-primary);
+  z-index: 1001;
+}
+
 .nav-logo {
   font-family: var(--font-heading);
   font-size: 1.5rem;
@@ -219,8 +231,66 @@ nav.scrolled {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
+/* Mobile Navigation System */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: hsla(240, 10%, 4%, 0.95);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  visibility: hidden;
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.mobile-nav-link:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+.mobile-menu-cta {
+  margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .nav-links, .hide-mobile {
     display: none;
+  }
+  
+  .mobile-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
   }
 }

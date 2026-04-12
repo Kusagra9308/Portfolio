@@ -79,6 +79,32 @@ const About = () => {
                 </div>
               </motion.div>
             ))}
+            
+            {/* Roadmap Badge Integration */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="roadmap-card glass-card"
+            >
+              <div className="roadmap-header">
+                <Activity size={20} className="text-accent" />
+                <h4>Learning Roadmap</h4>
+              </div>
+              <div className="roadmap-content">
+                <a href="https://roadmap.sh" target="_blank" rel="noopener noreferrer" className="roadmap-link">
+                  <img 
+                    src="https://roadmap.sh/card/tall/694eba96be04d9e99d609095?variant=dark&roadmaps=full-stack%2Cdevops%2Cbackend" 
+                    alt="roadmap.sh"
+                    className="roadmap-img"
+                  />
+                  <div className="roadmap-overlay">
+                    <span>View Full Roadmap</span>
+                  </div>
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -157,10 +183,85 @@ const About = () => {
           border-radius: 6px;
           color: var(--text-muted);
         }
+
+        /* Roadmap Card Styles */
+        .roadmap-card {
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          grid-row: span 2; /* Make it taller to fit the tall card image */
+          overflow: hidden;
+        }
+
+        .roadmap-header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .roadmap-content {
+          position: relative;
+          border-radius: 12px;
+          overflow: hidden;
+          background: #000;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .roadmap-link {
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: relative;
+        }
+
+        .roadmap-img {
+          width: 100%;
+          height: auto;
+          display: block;
+          transition: var(--transition);
+        }
+
+        .roadmap-overlay {
+          position: absolute;
+          inset: 0;
+          background: hsla(263, 70%, 50%, 0.2);
+          backdrop-filter: blur(2px);
+          opacity: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: var(--transition);
+        }
+
+        .roadmap-overlay span {
+          background: var(--primary);
+          color: white;
+          padding: 8px 16px;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .roadmap-link:hover .roadmap-overlay {
+          opacity: 1;
+        }
+
+        .roadmap-link:hover .roadmap-img {
+          transform: scale(1.05);
+        }
+
+        .text-accent {
+          color: var(--accent);
+        }
         
         @media (max-width: 1200px) {
            .about-grid { grid-template-columns: 1fr; }
-           .tech-stack-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+           .tech-stack-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+           .roadmap-card { grid-row: auto; }
         }
         
         @media (max-width: 640px) {

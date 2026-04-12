@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Google Form Solver",
+  "version": "1.0",
+  "description": "Uses ChatGPT to find correct answers for Google Form quizzes.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://docs.google.com/forms/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://docs.google.com/forms/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "fetch-answers": {
+      "suggested_key": {
+        "default": "Alt+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Fetch answers from ChatGPT"
+    },
+    "hide-dots": {
+      "suggested_key": {
+        "default": "Alt+Shift+H",
+        "mac": "Command+Shift+H"
+      },
+      "description": "Hide all red dots"
+    },
+    "refetch-answers": {
+      "suggested_key": {
+        "default": "Alt+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "Refetch answers from ChatGPT"
+    }
+  }
+}

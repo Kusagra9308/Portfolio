@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import profileImg from '../assets/profile_no_bg.png';
 import { Github, Codeforces, LeetCode, Linkedin } from './Icons';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, FileText } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -27,6 +27,14 @@ const Hero = () => {
           <div className="hero-cta">
             <a href="#projects" className="btn-primary">
               View Work <ArrowRight className="inline-icon" size={18} />
+            </a>
+            <a 
+              href="https://drive.google.com/file/d/1363D4YsnhJJtQdTwK2fztiPGsyGnp0mk/view" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn-secondary"
+            >
+              Resume <FileText className="inline-icon" size={18} />
             </a>
             <div className="social-links">
               <a href="https://github.com/Kusagra9308" target="_blank" rel="noreferrer" className="social-icon" title="GitHub"><Github size={24} /></a>
@@ -109,7 +117,8 @@ const Hero = () => {
         .hero-cta {
           display: flex;
           align-items: center;
-          gap: 32px;
+          flex-wrap: wrap;
+          gap: 24px;
         }
         
         .inline-icon {

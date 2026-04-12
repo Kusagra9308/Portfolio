@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github } from './Icons';
-import { Code2, ExternalLink, MessageSquare } from 'lucide-react';
+import { Code2, ExternalLink, MessageSquare, Zap, Database, Timer } from 'lucide-react';
 
 const projects = [
   {
@@ -14,8 +14,35 @@ const projects = [
     icon: <Code2 size={24} />
   },
   {
+    title: "Google Form Solver",
+    description: "AI-powered Chrome extension that automates answering Google Form quizzes by extracting question data and fetching answers via ChatGPT API.",
+    tags: ["Chrome Extension", "JavaScript", "OpenAI API", "Automation"],
+    github: "https://github.com/Kusagra9308",
+    demo: "#",
+    color: "hsl(15, 80%, 50%)",
+    icon: <Zap size={24} />
+  },
+  {
+    title: "LeetCode Revision",
+    description: "Full-stack system for tracking LeetCode problems with a custom spaced-repetition algorithm to optimize long-term retention.",
+    tags: ["Node.js", "Express", "MongoDB", "Algorithms"],
+    github: "https://github.com/Kusagra9308",
+    demo: "#",
+    color: "hsl(145, 70%, 45%)",
+    icon: <Database size={24} />
+  },
+  {
+    title: "Global Timer",
+    description: "High-performance productivity tool that injects a persistent, non-intrusive stopwatch and timer into every browser tab.",
+    tags: ["JavaScript", "Chrome API", "UI/UX", "Productivity"],
+    github: "https://github.com/Kusagra9308",
+    demo: "#",
+    color: "hsl(210, 80%, 55%)",
+    icon: <Timer size={24} />
+  },
+  {
     title: "NexusChat",
-    description: "Enterprise-grade real-time messaging engine with end-to-end encryption and WebSocket-driven collaboration rooms. (In Development)",
+    description: "Enterprise-grade real-time messaging engine with end-to-end encryption and WebSocket-driven collaboration rooms.",
     tags: ["NestJS", "WebSockets", "Redis", "TypeScript"],
     github: "https://github.com/Kusagra9308",
     demo: "#",

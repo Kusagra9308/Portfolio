@@ -93,7 +93,7 @@ const About = () => {
                 <h4>Learning Roadmap</h4>
               </div>
               <div className="roadmap-content">
-                <a href="https://roadmap.sh" target="_blank" rel="noopener noreferrer" className="roadmap-link">
+                <a href="https://roadmap.sh/card/wide/694eba96be04d9e99d609095?variant=dark&roadmaps=" target="_blank" rel="noopener noreferrer" className="roadmap-link">
                   <img 
                     src="https://roadmap.sh/card/wide/694eba96be04d9e99d609095?variant=dark" 
                     alt="roadmap.sh"

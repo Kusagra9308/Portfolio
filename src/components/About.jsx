@@ -95,7 +95,7 @@ const About = () => {
               <div className="roadmap-content">
                 <a href="https://roadmap.sh" target="_blank" rel="noopener noreferrer" className="roadmap-link">
                   <img 
-                    src="https://roadmap.sh/card/tall/694eba96be04d9e99d609095?variant=dark&roadmaps=full-stack%2Cdevops%2Cbackend" 
+                    src="https://roadmap.sh/card/wide/694eba96be04d9e99d609095?variant=dark" 
                     alt="roadmap.sh"
                     className="roadmap-img"
                   />
@@ -190,7 +190,7 @@ const About = () => {
           display: flex;
           flex-direction: column;
           gap: 15px;
-          grid-row: span 2; /* Make it taller to fit the tall card image */
+          grid-column: span 2; /* Spanning full width for the wide card */
           overflow: hidden;
         }
 
@@ -261,7 +261,7 @@ const About = () => {
         @media (max-width: 1200px) {
            .about-grid { grid-template-columns: 1fr; }
            .tech-stack-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-           .roadmap-card { grid-row: auto; }
+           .roadmap-card { grid-column: auto; }
         }
         
         @media (max-width: 640px) {
